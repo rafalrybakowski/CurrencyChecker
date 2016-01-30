@@ -116,7 +116,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Kdj-Dh-iJJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WPD-xC-NNa" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WPD-xC-NNa" customClass="ERCNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="13W-1e-YNc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
