@@ -6,20 +6,36 @@
 //  Copyright © 2016 Rafał. All rights reserved.
 //
 
+#import "ERCCurrencyManager.h"
 #import "ERCExchangerViewController.h"
 
 @interface ERCExchangerViewController ()
+
+@property ERCCurrencyManager* currencyManager;
 
 @end
 
 @implementation ERCExchangerViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+
+    self.currencyManager = [ERCCurrencyManager sharedInstance];
+
     // Do any additional setup after loading the view.
+
+    //    AFHTTPSessionManager* manager = [AFHTTPSessionManager manager];
+    //    [manager GET:@"http://api.fixer.io/latest?base=PLN&symbols=GBP,USD" parameters:nil progress:nil success:^(NSURLSessionTask* task, id responseObject) {
+    //        NSLog(@"JSON: %@", responseObject);
+    //    }
+    //         failure:^(NSURLSessionTask* operation, NSError* error) {
+    //             NSLog(@"Error: %@", error);
+    //         }];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

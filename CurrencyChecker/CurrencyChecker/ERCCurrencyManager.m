@@ -7,9 +7,20 @@
 //
 
 #import "AFNetworking.h"
+
 #import "ERCCurrencyManager.h"
 
 @implementation ERCCurrencyManager
+
++ (ERCCurrencyManager*)sharedInstance
+{
+    static dispatch_once_t oncePredicate;
+    static ERCCurrencyManager* _sharedInstance = nil;
+    dispatch_once(&oncePredicate, ^{
+        _sharedInstance = [[ERCCurrencyManager alloc] init];
+    });
+    return _sharedInstance;
+}
 
 - (id)init
 {
@@ -24,13 +35,33 @@
 
 - (NSArray*)getAllCurrencies
 {
-    AFHTTPSessionManager* manager = [AFHTTPSessionManager manager];
-    [manager GET:@"http://api.fixer.io/latest?base=PLN&symbols=GBP,USD" parameters:nil progress:nil success:^(NSURLSessionTask* task, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+    NSString* jsonPath = [[NSBundle mainBundle] pathForResource:@"currencies" ofType:@"txt"];
+    NSData* json = [[NSData alloc] initWithContentsOfFile:jsonPath];
+
+    NSDictionary* parsedJSON = [NSJSONSerialization JSONObjectWithData:json options:0 error:nil];
+    NSDictionary* dictionaryCourrencies = [parsedJSON valueForKey:@"currencies"];
+    NSArray* sortedCodes = [[dictionaryCourrencies allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+
+    NSMutableArray* arrayCurrencies = [[NSMutableArray alloc] init];
+    for (NSString* currencyCode in sortedCodes) {
+        NSArray* currencyDetails = [dictionaryCourrencies objectForKey:currencyCode];
+        NSString* currencyName = currencyDetails[0];
+        NSString* currencySymbol = currencyDetails[1];
+
+        ERCCurrency* currency = [[ERCCurrency alloc] initWithCode:currencyCode name:currencyName symbol:currencySymbol];
+        [arrayCurrencies addObject:currency];
     }
-        failure:^(NSURLSessionTask* operation, NSError* error) {
-            NSLog(@"Error: %@", error);
-        }];
+
+    return arrayCurrencies;
+}
+
+- (ERCCurrency*)getCurrencyWithCode:(NSString*)code
+{
+    for (ERCCurrency* currency in self.currencies) {
+        if ([currency.code isEqualToString:code]) {
+            return currency;
+        }
+    }
 
     return nil;
 }

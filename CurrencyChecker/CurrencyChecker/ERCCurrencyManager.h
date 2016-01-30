@@ -6,10 +6,15 @@
 //  Copyright © 2016 Rafał. All rights reserved.
 //
 
+#import "ERCCurrency.h"
 #import <Foundation/Foundation.h>
 
 @interface ERCCurrencyManager : NSObject
 
 @property NSArray* currencies;
+
++ (ERCCurrencyManager*)sharedInstance;
+
+- (ERCCurrency*)getCurrencyWithCode:(NSString*)code;
 
 @end

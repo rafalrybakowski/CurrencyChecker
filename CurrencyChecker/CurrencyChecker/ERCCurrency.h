@@ -12,5 +12,9 @@
 
 @property NSString* code;
 @property NSString* name;
+@property NSString* symbol;
+@property bool isSelected;
+
+- (id)initWithCode:(NSString*)code name:(NSString*)name symbol:(NSString*)symbol;
 
 @end

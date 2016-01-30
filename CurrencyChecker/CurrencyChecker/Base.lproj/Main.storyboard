@@ -8,7 +8,7 @@
         <!--EXCHANGE RATES-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="EXCHANGE RATES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="EXCHANGE RATES" id="BYZ-38-t0r" customClass="ERCExchangerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -40,6 +40,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ERCCurrencyDisplayCell" id="gd8-gU-Wng" customClass="ERCCurrencyDisplayCell">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gd8-gU-Wng" id="voQ-wf-bcl">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAm-K4-fIK">
+                                            <rect key="frame" x="318" y="6" width="51" height="31"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="31" id="IYa-xo-7aj"/>
+                                                <constraint firstAttribute="width" constant="49" id="It4-jd-eGi"/>
+                                            </constraints>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTM-MU-P9X">
+                                            <rect key="frame" x="8" y="0.0" width="48" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="ZW9-jT-KNq"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJ8-zC-czi">
+                                            <rect key="frame" x="64" y="0.0" width="32" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="32" id="8qz-5o-rb6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ync-ck-oiN">
+                                            <rect key="frame" x="112" y="0.0" width="198" height="43"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="hTM-MU-P9X" secondAttribute="bottom" constant="1" id="28j-tU-Wdq"/>
+                                        <constraint firstAttribute="trailing" secondItem="tAm-K4-fIK" secondAttribute="trailing" constant="8" id="9se-iA-RcS"/>
+                                        <constraint firstItem="ync-ck-oiN" firstAttribute="top" secondItem="voQ-wf-bcl" secondAttribute="top" id="A8E-ct-VqC"/>
+                                        <constraint firstItem="IJ8-zC-czi" firstAttribute="leading" secondItem="hTM-MU-P9X" secondAttribute="trailing" constant="8" id="JcS-4J-FMx"/>
+                                        <constraint firstItem="tAm-K4-fIK" firstAttribute="top" secondItem="voQ-wf-bcl" secondAttribute="top" constant="6" id="LPc-oW-abZ"/>
+                                        <constraint firstItem="tAm-K4-fIK" firstAttribute="leading" secondItem="ync-ck-oiN" secondAttribute="trailing" constant="8" id="Lyl-YV-0oa"/>
+                                        <constraint firstItem="IJ8-zC-czi" firstAttribute="top" secondItem="voQ-wf-bcl" secondAttribute="top" id="M8p-zn-BJu"/>
+                                        <constraint firstAttribute="bottom" secondItem="tAm-K4-fIK" secondAttribute="bottom" constant="6" id="SzX-SQ-bC6"/>
+                                        <constraint firstItem="hTM-MU-P9X" firstAttribute="leading" secondItem="voQ-wf-bcl" secondAttribute="leading" constant="8" id="lSR-KL-lPt"/>
+                                        <constraint firstAttribute="bottom" secondItem="IJ8-zC-czi" secondAttribute="bottom" constant="1" id="ptu-eF-zhA"/>
+                                        <constraint firstItem="hTM-MU-P9X" firstAttribute="top" secondItem="voQ-wf-bcl" secondAttribute="top" id="x62-Il-E1t"/>
+                                        <constraint firstItem="ync-ck-oiN" firstAttribute="leading" secondItem="IJ8-zC-czi" secondAttribute="trailing" constant="16" id="xVE-KP-KWd"/>
+                                        <constraint firstAttribute="bottom" secondItem="ync-ck-oiN" secondAttribute="bottom" id="y0g-Ex-qBL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="codeLabel" destination="hTM-MU-P9X" id="j8y-3q-SDi"/>
+                                    <outlet property="nameLabel" destination="ync-ck-oiN" id="FL4-eG-5jb"/>
+                                    <outlet property="selectionSwitch" destination="tAm-K4-fIK" id="gej-l2-mRw"/>
+                                    <outlet property="symbolLabel" destination="IJ8-zC-czi" id="et4-SF-9Pf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                     </tableView>
                     <navigationItem key="navigationItem" title="CURRENCIES" id="gP6-mD-ero"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

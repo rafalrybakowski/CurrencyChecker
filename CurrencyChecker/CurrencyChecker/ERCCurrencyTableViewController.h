@@ -6,10 +6,9 @@
 //  Copyright © 2016 Rafał. All rights reserved.
 //
 
+#import "ERCCurrencyDisplayCell.h"
 #import <UIKit/UIKit.h>
 
-@interface ERCCurrencyTableViewController : UITableViewController
-
-
+@interface ERCCurrencyTableViewController : UITableViewController <ERCCurrencyDisplayCellDelegate>
 
 @end
