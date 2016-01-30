@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ERCExchangerViewController.h
 //  CurrencyChecker
 //
 //  Created by Rafał on 30.01.2016.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ERCExchangerViewController : UIViewController
 
 @end
-
