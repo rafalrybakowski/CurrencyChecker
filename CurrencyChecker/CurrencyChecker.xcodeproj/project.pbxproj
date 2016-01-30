@@ -16,6 +16,9 @@
 		B51782C51C5CB90F004B3112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51782C31C5CB90F004B3112 /* LaunchScreen.storyboard */; };
 		B51782D01C5CB90F004B3112 /* CurrencyCheckerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B51782CF1C5CB90F004B3112 /* CurrencyCheckerTests.m */; };
 		B51782DB1C5CB90F004B3112 /* CurrencyCheckerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B51782DA1C5CB90F004B3112 /* CurrencyCheckerUITests.m */; };
+		B51782F41C5CE620004B3112 /* ERCCurrencyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51782F31C5CE620004B3112 /* ERCCurrencyTableViewController.m */; };
+		B51782F71C5CE83A004B3112 /* ERCCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = B51782F61C5CE83A004B3112 /* ERCCurrency.m */; };
+		B51782FA1C5CE8D1004B3112 /* ERCCurrencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B51782F91C5CE8D1004B3112 /* ERCCurrencyManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,12 @@
 		B51782D61C5CB90F004B3112 /* CurrencyCheckerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyCheckerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51782DA1C5CB90F004B3112 /* CurrencyCheckerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrencyCheckerUITests.m; sourceTree = "<group>"; };
 		B51782DC1C5CB90F004B3112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B51782F21C5CE620004B3112 /* ERCCurrencyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCCurrencyTableViewController.h; sourceTree = "<group>"; };
+		B51782F31C5CE620004B3112 /* ERCCurrencyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCCurrencyTableViewController.m; sourceTree = "<group>"; };
+		B51782F51C5CE83A004B3112 /* ERCCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCCurrency.h; sourceTree = "<group>"; };
+		B51782F61C5CE83A004B3112 /* ERCCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCCurrency.m; sourceTree = "<group>"; };
+		B51782F81C5CE8D1004B3112 /* ERCCurrencyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCCurrencyManager.h; sourceTree = "<group>"; };
+		B51782F91C5CE8D1004B3112 /* ERCCurrencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCCurrencyManager.m; sourceTree = "<group>"; };
 		DB358631384574ECBF820A3C /* libPods-CurrencyChecker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CurrencyChecker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8AC5147D953CDA6AFE189F /* Pods-CurrencyChecker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyChecker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyChecker/Pods-CurrencyChecker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,20 +134,14 @@
 		B51782B41C5CB90F004B3112 /* CurrencyChecker */ = {
 			isa = PBXGroup;
 			children = (
-				B51782EC1C5CBD0D004B3112 /* ViewControllers */,
-				B51782EB1C5CBCFE004B3112 /* Models */,
-				B51782EA1C5CBCF7004B3112 /* Frameworks */,
-				B51782E91C5CBCEE004B3112 /* Controllers */,
 				B51782E81C5CBCE4004B3112 /* Assets */,
-				B51782B81C5CB90F004B3112 /* AppDelegate.h */,
-				B51782B91C5CB90F004B3112 /* AppDelegate.m */,
-				B51782BB1C5CB90F004B3112 /* ViewController.h */,
-				B51782BC1C5CB90F004B3112 /* ViewController.m */,
-				B51782BE1C5CB90F004B3112 /* Main.storyboard */,
-				B51782C11C5CB90F004B3112 /* Assets.xcassets */,
-				B51782C31C5CB90F004B3112 /* LaunchScreen.storyboard */,
-				B51782C61C5CB90F004B3112 /* Info.plist */,
+				B51782E91C5CBCEE004B3112 /* Controllers */,
+				B51782EA1C5CBCF7004B3112 /* Frameworks */,
+				B51782EB1C5CBCFE004B3112 /* Models */,
+				B51782EE1C5CD923004B3112 /* Storyboards */,
 				B51782B51C5CB90F004B3112 /* Supporting Files */,
+				B51782EC1C5CBD0D004B3112 /* ViewControllers */,
+				B51782ED1C5CC4D7004B3112 /* Views */,
 			);
 			path = CurrencyChecker;
 			sourceTree = "<group>";
@@ -146,6 +149,9 @@
 		B51782B51C5CB90F004B3112 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B51782B81C5CB90F004B3112 /* AppDelegate.h */,
+				B51782B91C5CB90F004B3112 /* AppDelegate.m */,
+				B51782C61C5CB90F004B3112 /* Info.plist */,
 				B51782B61C5CB90F004B3112 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -172,6 +178,7 @@
 		B51782E81C5CBCE4004B3112 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B51782C11C5CB90F004B3112 /* Assets.xcassets */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -179,6 +186,8 @@
 		B51782E91C5CBCEE004B3112 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B51782F81C5CE8D1004B3112 /* ERCCurrencyManager.h */,
+				B51782F91C5CE8D1004B3112 /* ERCCurrencyManager.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -193,6 +202,8 @@
 		B51782EB1C5CBCFE004B3112 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B51782F51C5CE83A004B3112 /* ERCCurrency.h */,
+				B51782F61C5CE83A004B3112 /* ERCCurrency.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -200,8 +211,28 @@
 		B51782EC1C5CBD0D004B3112 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B51782F21C5CE620004B3112 /* ERCCurrencyTableViewController.h */,
+				B51782F31C5CE620004B3112 /* ERCCurrencyTableViewController.m */,
+				B51782BB1C5CB90F004B3112 /* ViewController.h */,
+				B51782BC1C5CB90F004B3112 /* ViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B51782ED1C5CC4D7004B3112 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B51782EE1C5CD923004B3112 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B51782C31C5CB90F004B3112 /* LaunchScreen.storyboard */,
+				B51782BE1C5CB90F004B3112 /* Main.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,8 +416,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51782F71C5CE83A004B3112 /* ERCCurrency.m in Sources */,
 				B51782BD1C5CB90F004B3112 /* ViewController.m in Sources */,
 				B51782BA1C5CB90F004B3112 /* AppDelegate.m in Sources */,
+				B51782FA1C5CE8D1004B3112 /* ERCCurrencyManager.m in Sources */,
+				B51782F41C5CE620004B3112 /* ERCCurrencyTableViewController.m in Sources */,
 				B51782B71C5CB90F004B3112 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

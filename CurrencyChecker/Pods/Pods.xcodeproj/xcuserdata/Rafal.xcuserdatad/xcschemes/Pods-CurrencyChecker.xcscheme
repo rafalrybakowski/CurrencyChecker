@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1ADA5FD23936879ACEC3CD48'
+               BlueprintIdentifier = '06BE6B756A43DBFDEFD82404'
                BlueprintName = 'Pods-CurrencyChecker'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-CurrencyChecker.a'>
