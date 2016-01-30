@@ -53,6 +53,7 @@
     ERCCurrency* currency = [self.currencyManager getCurrencyWithCode:currencyDisplayCell.codeLabel.text];
     if (currency) {
         currency.isSelected = state;
+        [currency saveState];
     }
 }
 

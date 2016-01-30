@@ -16,5 +16,6 @@
 @property bool isSelected;
 
 - (id)initWithCode:(NSString*)code name:(NSString*)name symbol:(NSString*)symbol;
+- (void)saveState;
 
 @end
