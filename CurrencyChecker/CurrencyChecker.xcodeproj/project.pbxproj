@@ -21,10 +21,16 @@
 		B51782FC1C5CEB44004B3112 /* currencies.txt in Resources */ = {isa = PBXBuildFile; fileRef = B51782FB1C5CEB44004B3112 /* currencies.txt */; };
 		B51783021C5CF130004B3112 /* ERCExchangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51783011C5CF130004B3112 /* ERCExchangerViewController.m */; };
 		B51783061C5CF766004B3112 /* ERCCurrencyDisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B51783051C5CF766004B3112 /* ERCCurrencyDisplayCell.m */; };
-		B51783171C5D0EB0004B3112 /* AKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B51783161C5D0EB0004B3112 /* AKPickerView.m */; };
 		B517831A1C5D0F01004B3112 /* ERCTextHorizontalPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B51783191C5D0F01004B3112 /* ERCTextHorizontalPicker.m */; };
 		B517831D1C5D2513004B3112 /* ERCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B517831C1C5D2513004B3112 /* ERCNavigationController.m */; };
 		B51783211C5D25DA004B3112 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B51783201C5D25DA004B3112 /* Constants.m */; };
+		B51783271C5D3746004B3112 /* ERCUIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51783261C5D3746004B3112 /* ERCUIColorExtensions.swift */; };
+		B517832A1C5E1802004B3112 /* ERCExchangeRateAPICommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B51783291C5E1802004B3112 /* ERCExchangeRateAPICommunicator.m */; };
+		B517832D1C5E1827004B3112 /* ERCExchangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B517832C1C5E1827004B3112 /* ERCExchangeManager.m */; };
+		B5736EA71C5E3ECA00EEC842 /* ERCExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = B5736EA61C5E3ECA00EEC842 /* ERCExchange.m */; };
+		B5736EAB1C5E5C9B00EEC842 /* S-Core - CoreSansD25Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5736EA81C5E5C9B00EEC842 /* S-Core - CoreSansD25Light.otf */; };
+		B5736EAC1C5E5C9B00EEC842 /* S-Core - CoreSansD35Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5736EA91C5E5C9B00EEC842 /* S-Core - CoreSansD35Regular.otf */; };
+		B5736EAD1C5E5C9B00EEC842 /* S-Core - CoreSansD55Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5736EAA1C5E5C9B00EEC842 /* S-Core - CoreSansD55Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,14 +78,22 @@
 		B51783041C5CF766004B3112 /* ERCCurrencyDisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCCurrencyDisplayCell.h; sourceTree = "<group>"; };
 		B51783051C5CF766004B3112 /* ERCCurrencyDisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCCurrencyDisplayCell.m; sourceTree = "<group>"; };
 		B51783121C5D0C4F004B3112 /* CurrencyChecker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CurrencyChecker-Bridging-Header.h"; sourceTree = "<group>"; };
-		B51783151C5D0EB0004B3112 /* AKPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPickerView.h; sourceTree = "<group>"; };
-		B51783161C5D0EB0004B3112 /* AKPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPickerView.m; sourceTree = "<group>"; };
 		B51783181C5D0F01004B3112 /* ERCTextHorizontalPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCTextHorizontalPicker.h; sourceTree = "<group>"; };
 		B51783191C5D0F01004B3112 /* ERCTextHorizontalPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCTextHorizontalPicker.m; sourceTree = "<group>"; };
 		B517831B1C5D2513004B3112 /* ERCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCNavigationController.h; sourceTree = "<group>"; };
 		B517831C1C5D2513004B3112 /* ERCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCNavigationController.m; sourceTree = "<group>"; };
 		B517831F1C5D25DA004B3112 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B51783201C5D25DA004B3112 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		B51783261C5D3746004B3112 /* ERCUIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ERCUIColorExtensions.swift; sourceTree = "<group>"; };
+		B51783281C5E1802004B3112 /* ERCExchangeRateAPICommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCExchangeRateAPICommunicator.h; sourceTree = "<group>"; };
+		B51783291C5E1802004B3112 /* ERCExchangeRateAPICommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCExchangeRateAPICommunicator.m; sourceTree = "<group>"; };
+		B517832B1C5E1827004B3112 /* ERCExchangeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCExchangeManager.h; sourceTree = "<group>"; };
+		B517832C1C5E1827004B3112 /* ERCExchangeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCExchangeManager.m; sourceTree = "<group>"; };
+		B5736EA51C5E3ECA00EEC842 /* ERCExchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCExchange.h; sourceTree = "<group>"; };
+		B5736EA61C5E3ECA00EEC842 /* ERCExchange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCExchange.m; sourceTree = "<group>"; };
+		B5736EA81C5E5C9B00EEC842 /* S-Core - CoreSansD25Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-Core - CoreSansD25Light.otf"; sourceTree = "<group>"; };
+		B5736EA91C5E5C9B00EEC842 /* S-Core - CoreSansD35Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-Core - CoreSansD35Regular.otf"; sourceTree = "<group>"; };
+		B5736EAA1C5E5C9B00EEC842 /* S-Core - CoreSansD55Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-Core - CoreSansD55Bold.otf"; sourceTree = "<group>"; };
 		DB358631384574ECBF820A3C /* libPods-CurrencyChecker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CurrencyChecker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8AC5147D953CDA6AFE189F /* Pods-CurrencyChecker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyChecker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyChecker/Pods-CurrencyChecker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +224,10 @@
 			children = (
 				B51782F81C5CE8D1004B3112 /* ERCCurrencyManager.h */,
 				B51782F91C5CE8D1004B3112 /* ERCCurrencyManager.m */,
+				B517832B1C5E1827004B3112 /* ERCExchangeManager.h */,
+				B517832C1C5E1827004B3112 /* ERCExchangeManager.m */,
+				B51783281C5E1802004B3112 /* ERCExchangeRateAPICommunicator.h */,
+				B51783291C5E1802004B3112 /* ERCExchangeRateAPICommunicator.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -226,6 +244,8 @@
 			children = (
 				B51782F51C5CE83A004B3112 /* ERCCurrency.h */,
 				B51782F61C5CE83A004B3112 /* ERCCurrency.m */,
+				B5736EA51C5E3ECA00EEC842 /* ERCExchange.h */,
+				B5736EA61C5E3ECA00EEC842 /* ERCExchange.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -273,6 +293,9 @@
 		B51783081C5CFEA0004B3112 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B5736EA81C5E5C9B00EEC842 /* S-Core - CoreSansD25Light.otf */,
+				B5736EA91C5E5C9B00EEC842 /* S-Core - CoreSansD35Regular.otf */,
+				B5736EAA1C5E5C9B00EEC842 /* S-Core - CoreSansD55Bold.otf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -288,8 +311,6 @@
 		B51783101C5D0C17004B3112 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
-				B51783151C5D0EB0004B3112 /* AKPickerView.h */,
-				B51783161C5D0EB0004B3112 /* AKPickerView.m */,
 				B51783181C5D0F01004B3112 /* ERCTextHorizontalPicker.h */,
 				B51783191C5D0F01004B3112 /* ERCTextHorizontalPicker.m */,
 			);
@@ -299,10 +320,19 @@
 		B517831E1C5D25BC004B3112 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B51783221C5D35FA004B3112 /* Class extensions */,
 				B517831F1C5D25DA004B3112 /* Constants.h */,
 				B51783201C5D25DA004B3112 /* Constants.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		B51783221C5D35FA004B3112 /* Class extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B51783261C5D3746004B3112 /* ERCUIColorExtensions.swift */,
+			);
+			name = "Class extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +405,7 @@
 				TargetAttributes = {
 					B51782B11C5CB90F004B3112 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = MSKK8TX96S;
 					};
 					B51782CA1C5CB90F004B3112 = {
 						CreatedOnToolsVersion = 7.2;
@@ -412,7 +443,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B51782C51C5CB90F004B3112 /* LaunchScreen.storyboard in Resources */,
+				B5736EAB1C5E5C9B00EEC842 /* S-Core - CoreSansD25Light.otf in Resources */,
+				B5736EAC1C5E5C9B00EEC842 /* S-Core - CoreSansD35Regular.otf in Resources */,
 				B51782C21C5CB90F004B3112 /* Assets.xcassets in Resources */,
+				B5736EAD1C5E5C9B00EEC842 /* S-Core - CoreSansD55Bold.otf in Resources */,
 				B51782C01C5CB90F004B3112 /* Main.storyboard in Resources */,
 				B51782FC1C5CEB44004B3112 /* currencies.txt in Resources */,
 			);
@@ -489,15 +523,18 @@
 			files = (
 				B51783211C5D25DA004B3112 /* Constants.m in Sources */,
 				B51782F71C5CE83A004B3112 /* ERCCurrency.m in Sources */,
+				B517832A1C5E1802004B3112 /* ERCExchangeRateAPICommunicator.m in Sources */,
 				B51783061C5CF766004B3112 /* ERCCurrencyDisplayCell.m in Sources */,
 				B51783021C5CF130004B3112 /* ERCExchangerViewController.m in Sources */,
 				B51782BA1C5CB90F004B3112 /* AppDelegate.m in Sources */,
 				B51782FA1C5CE8D1004B3112 /* ERCCurrencyManager.m in Sources */,
+				B517832D1C5E1827004B3112 /* ERCExchangeManager.m in Sources */,
 				B51782F41C5CE620004B3112 /* ERCCurrencyTableViewController.m in Sources */,
 				B517831D1C5D2513004B3112 /* ERCNavigationController.m in Sources */,
-				B51783171C5D0EB0004B3112 /* AKPickerView.m in Sources */,
+				B51783271C5D3746004B3112 /* ERCUIColorExtensions.swift in Sources */,
 				B51782B71C5CB90F004B3112 /* main.m in Sources */,
 				B517831A1C5D0F01004B3112 /* ERCTextHorizontalPicker.m in Sources */,
+				B5736EA71C5E3ECA00EEC842 /* ERCExchange.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,11 +675,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CurrencyChecker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = snacks4breakfast.CurrencyChecker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CurrencyChecker/CurrencyChecker-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -654,11 +694,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CurrencyChecker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = snacks4breakfast.CurrencyChecker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CurrencyChecker/CurrencyChecker-Bridging-Header.h";
 			};
 			name = Release;

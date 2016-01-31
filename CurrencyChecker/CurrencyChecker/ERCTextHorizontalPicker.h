@@ -36,8 +36,6 @@
 
 @protocol ERCTextHorizontalPickerDelegate <NSObject>
 
-
-
 - (void)textHorizontalPicker:(UIView*)textHorizontalPicker itemChanged:(NSString*)selectedItem atIndex:(NSInteger)index;
 
 @end

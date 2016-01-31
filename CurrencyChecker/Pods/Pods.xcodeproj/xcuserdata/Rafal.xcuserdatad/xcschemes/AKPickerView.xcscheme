@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1E0C05BCC0434B06BC1A303D'
-               BlueprintName = 'Pods-CurrencyChecker'
+               BlueprintIdentifier = 'BFD3EF91AA614EDDF42489BF'
+               BlueprintName = 'AKPickerView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-CurrencyChecker.a'>
+               BuildableName = 'libAKPickerView.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

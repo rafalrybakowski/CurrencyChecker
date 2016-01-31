@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AKPickerView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>738141A33A99050E8A8D87DDCEE35F53</key>
+		<key>928353533005A4198EBDA5B700D37B64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>928353533005A4198EBDA5B700D37B64</key>
+		<key>A35273E1314605952F39D68083D1DC9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9BB5D63DABC6B1C98A7757F6BA4EC2F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

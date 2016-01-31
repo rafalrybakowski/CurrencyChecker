@@ -15,6 +15,7 @@
 
 + (ERCCurrencyManager*)sharedInstance;
 
+- (NSArray*)getAllSelectedCurrencies;
 - (ERCCurrency*)getCurrencyWithCode:(NSString*)code;
 
 @end

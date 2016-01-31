@@ -9,10 +9,12 @@
 #import "ERCCurrency.h"
 #import "ERCCurrencyManager.h"
 #import "ERCCurrencyTableViewController.h"
+#import "ERCExchangeManager.h"
 
 @interface ERCCurrencyTableViewController ()
 
 @property ERCCurrencyManager* currencyManager;
+@property ERCExchangeManager* exchangeManager;
 
 @end
 
@@ -23,6 +25,7 @@
     [super viewDidLoad];
 
     self.currencyManager = [ERCCurrencyManager sharedInstance];
+    self.exchangeManager = [ERCExchangeManager sharedInstance];
 }
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section

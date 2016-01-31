@@ -7,11 +7,16 @@
 //
 
 #import "ERCCurrencyManager.h"
+#import "ERCExchangeManager.h"
 #import "ERCExchangerViewController.h"
 
-@interface ERCExchangerViewController ()
+@interface ERCExchangerViewController () <ERCExchangeManagerDelegate>
 
 @property ERCCurrencyManager* currencyManager;
+@property ERCExchangeManager* exchangeManager;
+
+@property NSString* fromCurrencyCode;
+@property NSString* targetCurrencyCode;
 
 @end
 
@@ -22,32 +27,65 @@
     [super viewDidLoad];
 
     self.currencyManager = [ERCCurrencyManager sharedInstance];
+    self.exchangeManager = [ERCExchangeManager sharedInstance];
+    self.exchangeManager.delegate = self;
+}
 
-    // Do any additional setup after loading the view.
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self initializeHorizontalPickers];
+}
 
-    //    AFHTTPSessionManager* manager = [AFHTTPSessionManager manager];
-    //    [manager GET:@"http://api.fixer.io/latest?base=PLN&symbols=GBP,USD" parameters:nil progress:nil success:^(NSURLSessionTask* task, id responseObject) {
-    //        NSLog(@"JSON: %@", responseObject);
-    //    }
-    //         failure:^(NSURLSessionTask* operation, NSError* error) {
-    //             NSLog(@"Error: %@", error);
-    //         }];
+- (void)initializeHorizontalPickers
+{
+    NSArray* selectedCurrenciesArray = [self.currencyManager getAllSelectedCurrencies];
+    NSMutableArray* currencyCodeArray = [[NSMutableArray alloc] init];
+    for (ERCCurrency* currency in selectedCurrenciesArray) {
+        [currencyCodeArray addObject:currency.code];
+    }
+
+    if (currencyCodeArray.count == 0) {
+        currencyCodeArray = (NSMutableArray*)@[ @"PLN", @"USD", @"GBP" ];
+    }
+
+    [self.fromCurrencyHorizontalPicker initWithItemList:currencyCodeArray];
+    [self.fromCurrencyHorizontalPicker setPickerStyleToFlat];
+    [self.fromCurrencyHorizontalPicker setInterItemSpacing:10];
+    self.fromCurrencyHorizontalPicker.delegate = self;
+    [self.fromCurrencyHorizontalPicker selectItem:0 withAnimation:false notifySelection:false];
+
+    [self.targetCurrencyHorizontalPicker initWithItemList:currencyCodeArray];
+    [self.targetCurrencyHorizontalPicker setPickerStyleToFlat];
+    [self.targetCurrencyHorizontalPicker setInterItemSpacing:10];
+    self.targetCurrencyHorizontalPicker.delegate = self;
+    [self.targetCurrencyHorizontalPicker selectItem:0 withAnimation:false notifySelection:false];
+}
+
+- (void)textHorizontalPicker:(UIView*)textHorizontalPicker itemChanged:(NSString*)selectedItem atIndex:(NSInteger)index
+{
+    self.fromCurrencyCode = [self.fromCurrencyHorizontalPicker selectedItem];
+    self.targetCurrencyCode = [self.targetCurrencyHorizontalPicker selectedItem];
+
+    [self.exchangeManager requestSingleCurrencyExchangeFrom:self.fromCurrencyCode to:self.targetCurrencyCode];
+}
+
+- (void)ercExchangeManager:(ERCExchangeManager*)exchangeManager didReceiveExchange:(ERCExchange*)exchange
+{
+    ERCCurrency* fromCurrency = [self.currencyManager getCurrencyWithCode:self.fromCurrencyCode];
+    ERCCurrency* targetCurrency = [self.currencyManager getCurrencyWithCode:self.targetCurrencyCode];
+
+    NSNumber* exchangeRate = exchange.rates[[NSString stringWithFormat:@"%@", self.targetCurrencyCode]];
+    if (exchangeRate == nil) {
+        exchangeRate = [NSNumber numberWithInt:1];
+    }
+    
+    self.exchangeRateLabel.text = [NSString stringWithFormat:@"%.03f", exchangeRate.floatValue];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

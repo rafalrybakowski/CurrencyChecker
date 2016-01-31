@@ -13,7 +13,8 @@
 - (void)initWithItemList:(NSArray*)itemArray
 {
     [self.pickerView removeFromSuperview];
-    self.pickerView = [[AKPickerView alloc] initWithFrame:self.bounds];
+    self.pickerView = [[AKPickerView alloc] initWithFrame:self.frame];
+    self.pickerView.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
     self.pickerView.delegate = self;
     self.pickerView.dataSource = self;
     self.pickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -87,7 +88,7 @@
 - (void)selectItem:(NSUInteger)item withAnimation:(BOOL)animation notifySelection:(BOOL)notifySelection
 {
     [self.pickerView scrollToItem:item animated:animation];
-    [self.pickerView selectItem:item animated:animation notifySelection:notifySelection];
+    [self.pickerView selectItem:item animated:animation];
     _selectedItem = [_horizontalPickerItems objectAtIndex:item];
 }
 

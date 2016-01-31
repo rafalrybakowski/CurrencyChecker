@@ -55,6 +55,19 @@
     return arrayCurrencies;
 }
 
+- (NSArray*)getAllSelectedCurrencies
+{
+    NSMutableArray* currencyArray = [[NSMutableArray alloc] init];
+
+    for (ERCCurrency* currency in self.currencies) {
+        if (currency.isSelected) {
+            [currencyArray addObject:currency];
+        }
+    }
+
+    return currencyArray;
+}
+
 - (ERCCurrency*)getCurrencyWithCode:(NSString*)code
 {
     for (ERCCurrency* currency in self.currencies) {
