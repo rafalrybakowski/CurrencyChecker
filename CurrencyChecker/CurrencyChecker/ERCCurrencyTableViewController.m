@@ -6,6 +6,8 @@
 //  Copyright © 2016 Rafał. All rights reserved.
 //
 
+#import "Constants.h"
+#import "CurrencyChecker-Swift.h"
 #import "ERCCurrency.h"
 #import "ERCCurrencyManager.h"
 #import "ERCCurrencyTableViewController.h"
@@ -26,6 +28,8 @@
 
     self.currencyManager = [ERCCurrencyManager sharedInstance];
     self.exchangeManager = [ERCExchangeManager sharedInstance];
+
+    self.view.backgroundColor = [UIColor getColorFromHex:COLOR_HEX_DARK_GRAY];
 }
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
@@ -40,6 +44,8 @@
     if (currencyCell == nil) {
         currencyCell = [[ERCCurrencyDisplayCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    
+    currencyCell.backgroundColor = [UIColor clearColor];
 
     ERCCurrency* currency = self.currencyManager.currencies[indexPath.row];
     currencyCell.nameLabel.text = currency.name;

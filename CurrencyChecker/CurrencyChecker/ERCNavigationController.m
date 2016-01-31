@@ -18,9 +18,9 @@
 
     [UINavigationBar appearance].barStyle = UIBarStyleBlack;
     [UINavigationBar appearance].translucent = NO;
-    [UINavigationBar appearance].barTintColor = [UIColor getColorFromHex:COLOR_HEX_DARK_GRAY];
     [UINavigationBar appearance].tintColor = [UIColor getColorFromHex:COLOR_HEX_PALE_GREEN];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor getColorFromHex:COLOR_HEX_PALE_GREEN] }];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor getColorFromHex:COLOR_HEX_PALE_GREEN], NSFontAttributeName : [UIFont fontWithName:@"CoreSansD55Bold" size:20] }];
+//    [UINavigationBar appearance].barTintColor = [UIColor getColorFromHex:COLOR_HEX_DARK_GRAY];
 }
 
 @end

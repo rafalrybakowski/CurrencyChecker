@@ -6,6 +6,8 @@
 //  Copyright © 2016 Rafał. All rights reserved.
 //
 
+#import "Constants.h"
+#import "CurrencyChecker-Swift.h"
 #import "ERCCurrencyManager.h"
 #import "ERCExchangeManager.h"
 #import "ERCExchangerViewController.h"
@@ -29,6 +31,8 @@
     self.currencyManager = [ERCCurrencyManager sharedInstance];
     self.exchangeManager = [ERCExchangeManager sharedInstance];
     self.exchangeManager.delegate = self;
+    
+    self.view.backgroundColor = [UIColor getColorFromHex:COLOR_HEX_DARK_GRAY];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -50,16 +54,27 @@
     }
 
     [self.fromCurrencyHorizontalPicker initWithItemList:currencyCodeArray];
-    [self.fromCurrencyHorizontalPicker setPickerStyleToFlat];
-    [self.fromCurrencyHorizontalPicker setInterItemSpacing:10];
+    [self setDefaultAppearanceForHorizontalPicker:self.fromCurrencyHorizontalPicker];
     self.fromCurrencyHorizontalPicker.delegate = self;
     [self.fromCurrencyHorizontalPicker selectItem:0 withAnimation:false notifySelection:false];
 
     [self.targetCurrencyHorizontalPicker initWithItemList:currencyCodeArray];
-    [self.targetCurrencyHorizontalPicker setPickerStyleToFlat];
-    [self.targetCurrencyHorizontalPicker setInterItemSpacing:10];
+    [self setDefaultAppearanceForHorizontalPicker:self.targetCurrencyHorizontalPicker];
     self.targetCurrencyHorizontalPicker.delegate = self;
     [self.targetCurrencyHorizontalPicker selectItem:0 withAnimation:false notifySelection:false];
+}
+
+- (void)setDefaultAppearanceForHorizontalPicker:(ERCTextHorizontalPicker*)horizontalPicker
+{
+    UIFont* fontUnselectedCurrency = [UIFont fontWithName:@"CoreSansD25Light" size:30];
+    UIFont* fontSelectedCurrency = [UIFont fontWithName:@"CoreSansD35Regular" size:30];
+
+    [horizontalPicker setPickerStyleToFlat];
+    [horizontalPicker setInterItemSpacing:10];
+    [horizontalPicker setFont:fontUnselectedCurrency];
+    [horizontalPicker setHighlightedFont:fontSelectedCurrency];
+    [horizontalPicker setTextColor:[UIColor getColorFromHex:COLOR_HEX_LIGHT_GRAY]];
+    [horizontalPicker setHighlightedTextColor:[UIColor getColorFromHex:COLOR_HEX_ACTIVE_GREEN]];
 }
 
 - (void)textHorizontalPicker:(UIView*)textHorizontalPicker itemChanged:(NSString*)selectedItem atIndex:(NSInteger)index
@@ -75,11 +90,14 @@
     ERCCurrency* fromCurrency = [self.currencyManager getCurrencyWithCode:self.fromCurrencyCode];
     ERCCurrency* targetCurrency = [self.currencyManager getCurrencyWithCode:self.targetCurrencyCode];
 
+    self.fromCurrencySymbolLabel.text = [NSString stringWithFormat:@"1%@=", fromCurrency.symbol];
+    self.targetCurrencySymbolLabel.text = targetCurrency.symbol;
+
     NSNumber* exchangeRate = exchange.rates[[NSString stringWithFormat:@"%@", self.targetCurrencyCode]];
     if (exchangeRate == nil) {
         exchangeRate = [NSNumber numberWithInt:1];
     }
-    
+
     self.exchangeRateLabel.text = [NSString stringWithFormat:@"%.03f", exchangeRate.floatValue];
 }
 
