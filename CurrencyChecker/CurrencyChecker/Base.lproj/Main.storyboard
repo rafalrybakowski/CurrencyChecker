@@ -46,29 +46,29 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYN-dG-mC0">
-                                <rect key="frame" x="88" y="48" width="200" height="60"/>
+                                <rect key="frame" x="78" y="48" width="220" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Whd-Gl-wvp"/>
-                                    <constraint firstAttribute="width" constant="200" id="wOq-Ox-xXg"/>
+                                    <constraint firstAttribute="width" constant="220" id="wOq-Ox-xXg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CoreSansD55Bold" family="Core Sans D 55 Bold" pointSize="70"/>
                                 <color key="textColor" red="0.60392156862745094" green="0.85098039215686272" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAo-H9-D1Q">
-                                <rect key="frame" x="288" y="48" width="40" height="35"/>
+                                <rect key="frame" x="298" y="48" width="50" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="9Dy-DS-PI2"/>
-                                    <constraint firstAttribute="width" constant="40" id="FYI-38-M8Y"/>
+                                    <constraint firstAttribute="width" constant="50" id="FYI-38-M8Y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CoreSansD55Bold" family="Core Sans D 55 Bold" pointSize="35"/>
                                 <color key="textColor" red="0.60392156862745094" green="0.85098039215686272" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1$=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gV-9T-VNz">
-                                <rect key="frame" x="88" y="28" width="40" height="20"/>
+                                <rect key="frame" x="78" y="28" width="60" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="VHQ-4Y-fuT"/>
+                                    <constraint firstAttribute="width" constant="60" id="VHQ-4Y-fuT"/>
                                     <constraint firstAttribute="height" constant="20" id="oWB-HM-aki"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CoreSansD25Light" family="Core Sans D 25 Light" pointSize="20"/>

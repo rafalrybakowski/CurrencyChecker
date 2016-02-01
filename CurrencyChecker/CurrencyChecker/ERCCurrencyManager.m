@@ -7,7 +7,6 @@
 //
 
 #import "AFNetworking.h"
-
 #import "ERCCurrencyManager.h"
 
 @implementation ERCCurrencyManager
@@ -39,12 +38,12 @@
     NSData* json = [[NSData alloc] initWithContentsOfFile:jsonPath];
 
     NSDictionary* parsedJSON = [NSJSONSerialization JSONObjectWithData:json options:0 error:nil];
-    NSDictionary* dictionaryCourrencies = [parsedJSON valueForKey:@"currencies"];
-    NSArray* sortedCodes = [[dictionaryCourrencies allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+    NSDictionary* dictionaryCurrencies = [parsedJSON valueForKey:@"currencies"];
+    NSArray* sortedCodes = [[dictionaryCurrencies allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
 
     NSMutableArray* arrayCurrencies = [[NSMutableArray alloc] init];
     for (NSString* currencyCode in sortedCodes) {
-        NSArray* currencyDetails = [dictionaryCourrencies objectForKey:currencyCode];
+        NSArray* currencyDetails = [dictionaryCurrencies objectForKey:currencyCode];
         NSString* currencyName = currencyDetails[0];
         NSString* currencySymbol = currencyDetails[1];
 

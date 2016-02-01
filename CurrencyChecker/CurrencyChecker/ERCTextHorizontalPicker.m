@@ -32,13 +32,12 @@
 {
     return [_horizontalPickerItems objectAtIndex:item];
 }
-
-@synthesize delegate;
-- (void)pickerView:(AKPickerView*)pickerView didSelectItem:(NSInteger)item;
+- (void)refresh
 {
-    _selectedItem = [_horizontalPickerItems objectAtIndex:item];
-    [self.delegate textHorizontalPicker:self itemChanged:self.selectedItem atIndex:item];
+    [self.pickerView reloadData];
 }
+
+#pragma mark - setters
 
 - (void)setFont:(UIFont*)font
 {
@@ -80,10 +79,14 @@
     self.pickerView.pickerViewStyle = AKPickerViewStyleFlat;
 }
 
+#pragma mark - getters
+
 - (NSString*)getSelectedItem
 {
     return _selectedItem;
 }
+
+#pragma mark - action methods
 
 - (void)selectItem:(NSUInteger)item withAnimation:(BOOL)animation notifySelection:(BOOL)notifySelection
 {
@@ -92,9 +95,13 @@
     _selectedItem = [_horizontalPickerItems objectAtIndex:item];
 }
 
-- (void)refresh
+#pragma mark - delegate methods
+
+@synthesize delegate;
+- (void)pickerView:(AKPickerView*)pickerView didSelectItem:(NSInteger)item;
 {
-    [self.pickerView reloadData];
+    _selectedItem = [_horizontalPickerItems objectAtIndex:item];
+    [self.delegate textHorizontalPicker:self itemChanged:self.selectedItem atIndex:item];
 }
 
 @end

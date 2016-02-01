@@ -32,6 +32,8 @@
     self.view.backgroundColor = [UIColor getColorFromHex:COLOR_HEX_DARK_GRAY];
 }
 
+#pragma mark - Tableview methods
+
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.currencyManager.currencies.count;
@@ -56,6 +58,8 @@
 
     return currencyCell;
 }
+
+#pragma mark - Delegate methods
 
 - (void)ERCCurrencyDisplayCell:(ERCCurrencyDisplayCell*)currencyDisplayCell flippedSwitchToState:(bool)state
 {

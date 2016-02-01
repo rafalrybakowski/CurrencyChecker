@@ -31,7 +31,7 @@
     self.currencyManager = [ERCCurrencyManager sharedInstance];
     self.exchangeManager = [ERCExchangeManager sharedInstance];
     self.exchangeManager.delegate = self;
-    
+
     self.view.backgroundColor = [UIColor getColorFromHex:COLOR_HEX_DARK_GRAY];
 }
 
@@ -40,6 +40,8 @@
     [super viewWillAppear:animated];
     [self initializeHorizontalPickers];
 }
+
+#pragma mark - Interface configuration
 
 - (void)initializeHorizontalPickers
 {
@@ -77,6 +79,8 @@
     [horizontalPicker setHighlightedTextColor:[UIColor getColorFromHex:COLOR_HEX_ACTIVE_GREEN]];
 }
 
+#pragma mark - Delegate methods
+
 - (void)textHorizontalPicker:(UIView*)textHorizontalPicker itemChanged:(NSString*)selectedItem atIndex:(NSInteger)index
 {
     self.fromCurrencyCode = [self.fromCurrencyHorizontalPicker selectedItem];
@@ -98,12 +102,19 @@
         exchangeRate = [NSNumber numberWithInt:1];
     }
 
-    self.exchangeRateLabel.text = [NSString stringWithFormat:@"%.03f", exchangeRate.floatValue];
+    self.exchangeRateLabel.text = [NSString stringWithFormat:[self getExchangeRateDisplayFormat:exchangeRate], exchangeRate.floatValue];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - supplementary methods
+
+- (NSString*)getExchangeRateDisplayFormat:(NSNumber*)rate
 {
-    [super didReceiveMemoryWarning];
+    if ([rate floatValue] >= 10) {
+        return @"%.02f";
+    }
+    else {
+        return @"%.03f";
+    }
 }
 
 @end

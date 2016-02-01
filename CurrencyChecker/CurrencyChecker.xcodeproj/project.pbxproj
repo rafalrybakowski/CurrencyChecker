@@ -168,7 +168,6 @@
 			children = (
 				B51782E81C5CBCE4004B3112 /* Assets */,
 				B51782E91C5CBCEE004B3112 /* Controllers */,
-				B51782EA1C5CBCF7004B3112 /* Frameworks */,
 				B51782EB1C5CBCFE004B3112 /* Models */,
 				B51782EE1C5CD923004B3112 /* Storyboards */,
 				B51782B51C5CB90F004B3112 /* Supporting Files */,
@@ -230,13 +229,6 @@
 				B51783291C5E1802004B3112 /* ERCExchangeRateAPICommunicator.m */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		B51782EA1C5CBCF7004B3112 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B51782EB1C5CBCFE004B3112 /* Models */ = {
